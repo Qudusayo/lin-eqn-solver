@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Linear Simultaneous Equation Solver</title>
+  </head>
+  <style>
+    * {
+      font-family: "Work Sans", sans-serif;
+    }
+    label {
+      display: block;
+    }
+    button {
+      cursor: pointer;
+    }
+    #calculator {
+      display: none;
+    }
+  </style>
+  <body>
+    <h1>Linear Simultaneous Equation Solver</h1>
+    <form>
+      <label for="Equation">Equation</label>
+      <textarea name="Equation" id="Equation" cols="30" rows="2"></textarea>
+      <br />
+      <button type="submit">Solve</button>
+    </form>
+
+    <div>
+      <h2>Result</h2>
+      <div id="result"></div>
+    </div>
+
+    <div id="calculator" style="width: 600px; height: 400px"></div>
+
+    <script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script>
+      var elt = document.getElementById("calculator");
+      var calculator = Desmos.GraphingCalculator(elt, {
+        expressionsCollapsed: true,
+        // Dsiplay the opening expression
+        expressions: false,
+        // Disable settings
+        settingsMenu: false,
+      });
+    </script>
+    <script src="./eqn.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
